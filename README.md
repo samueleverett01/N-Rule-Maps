@@ -17,4 +17,4 @@ For general background into n-rule maps, documentation for code use and examples
 Running this n-rule maps program requires Python 3.x, the Python Math and Random packages, Matplotlib, and NumPy.
 
 ## Research Papers
-The attachment `Perpindicular Projection Map Research Paper` is math paper studying a specific case of n-rule maps defined over the space of three pairwise nonparallel, nonconcurrent lines in R2.  This paper will appear in the *Journal of Dynamical Systems and Geometric Theories*.  A second paper discussing general n-rule maps in complete generality, as well as their application to problems in Dynamical Systems is being written.
+The attachment `Perpindicular Projection Map Research Paper` is math paper studying a specific case of n-rule maps defined over the space of three pairwise nonparallel, nonconcurrent lines in R2.  This paper will appear in the *Journal of Dynamical Systems and Geometric Theories*.  A second paper studying n-rule maps in complete generality, in the context of Dynamical Systems and geometry is upcoming.
