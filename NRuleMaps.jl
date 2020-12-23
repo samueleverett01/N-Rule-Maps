@@ -115,11 +115,11 @@ end
 # ╔═╡ 2b64bd10-448f-11eb-361c-1798fccb5fde
 # plot the visited points
 function plotOrbit(X_m, visitedPoints, points_to_plot, orbit_color)
-    x = -5000:5000
-    plot(x, zeros(10001), color="black", xlims=(-20,20), ylims=(-20, 20))
+    x = -800:800
+    plot(x, zeros(1601), color="black", xlims=(-20,20), ylims=(-20, 20))
 
     # now plot lines composing X_m
-    for k in X_m
+    @simd for k in X_m
         # define y coordinates
         m = k[1]
         m = tan(deg2rad(m))
@@ -161,7 +161,7 @@ The following code takes an n-rule, and plots the path it generates
         begin iteration
     orbit_color: the color of the orbit plot, default is red.
 """
-function nrulemap(X_m, nrule, num_iter, points_to_plot, start_point, orbit_color="red")
+function nRuleMap(X_m, nrule, num_iter, points_to_plot, start_point, orbit_color="red")
     currPoint = start_point
     visitedPoints = [start_point]
     n = length(nrule)
@@ -188,7 +188,7 @@ function nrulemap(X_m, nrule, num_iter, points_to_plot, start_point, orbit_color
         xdist = abs(currPoint[2])
         push!(lineDistOrdering, xdist)
         
-        for j in 1:d-1
+        @simd for j in 1:d-1
             # we must find the index of the line in X_m
             # with the dth closest line, so set all other lines
             # to the max distance
@@ -243,7 +243,7 @@ start_point: list of length 2 [x, y] specifying the x and y coordinates of the p
 	begin iteration
 orbit_color: the color of the orbit plot, default is red.
 """
-function symbolicnrulemap(X_m, nrule, num_iter, points_to_plot, start_point, orbit_color="red")
+function symbolicnRuleMap(X_m, nrule, num_iter, points_to_plot, start_point, orbit_color="red")
 	
 	currPoint = start_point
     visitedPoints = [start_point]
@@ -258,14 +258,6 @@ function symbolicnrulemap(X_m, nrule, num_iter, points_to_plot, start_point, orb
         step_ang = currRule[1]
         o = currRule[2]
         d = currRule[3]
-        
-        # order liens via distance and choose line at specified distance
-        lineIndx = 1
-        lineDistOrdering = []
-        for j in X_m
-            d_j = distpointline(j, currPoint)
-            push!(lineDistOrdering, d_j)
-        end
         
         # determine line
         if d == m+1
