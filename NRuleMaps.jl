@@ -246,7 +246,7 @@ orbit_color: the color of the orbit plot, default is red.
 function symbolicnRuleMap(X_m, nrule, num_iter, points_to_plot, start_point, orbit_color="red")
 	
 	currPoint = start_point
-    visitedPoints = [start_point]
+    visitedPoints = Array{Float64,1}[start_point]
     n = length(nrule)
     m = length(X_m) # m-1 as we include x-axis as a line
     
@@ -261,8 +261,8 @@ function symbolicnRuleMap(X_m, nrule, num_iter, points_to_plot, start_point, orb
         
         # determine line
         if d == m+1
-            mappingLine1 = [0, 0]
-            mappingLine2 = [0, 0]
+            mappingLine1 = [0.0, 0.0]
+            mappingLine2 = [0.0, 0.0]
 		else
 			mappingLine1 = X_m[d]
 			s = tan(deg2rad(mappingLine1[1]))
