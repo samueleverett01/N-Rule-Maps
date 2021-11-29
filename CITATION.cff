@@ -5,7 +5,7 @@ authors:
   given-names: "Samuel"
   orcid: " https://orcid.org/0000-0002-0456-2030"
 title: "N-Rule-Maps"
-version: 1.0.0
+version: 0.1
 doi: 10.5281/zenodo.5735154
 date-released: 2020-11-29
 url: "https://github.com/samueleverett01/N-Rule-Maps"
