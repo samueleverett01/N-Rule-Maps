@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Everett"
+  given-names: "Samuel"
+  orcid: " https://orcid.org/0000-0002-0456-2030"
+title: "N-Rule-Maps"
+version: 1.0.0
+doi: 10.5281/zenodo.1234
+date-released: 2020-11-29
+url: "https://github.com/samueleverett01/N-Rule-Maps"
